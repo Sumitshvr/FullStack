@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+Add Programme
+{% endblock title %}
+
+
+
+{% block body %}
+<h3 class="text-center bg-danger text-white"><span>Add Programme</span> </h3>
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+  {{message}}
+
+
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<br>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+
+      <form action="/department" method="post">
+
+
+        <div class="form-group">
+          <label for="classroom">Enter Programme</label>
+          <input type="text" class="form-control" name="classroom" id="classroom">
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="teacher_name">Enter Teacher Name</label>
+          <input type="text" class="form-control" name="teacher_name" id="teacher_name">
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-danger btn-sm btn-block">Add Programme</button>
+      </form>
+      <br>
+      <br>
+
+    </div>
+
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
+
+
+
+{% endblock body %}
